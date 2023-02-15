@@ -3,6 +3,7 @@ from pandas import read_csv
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima.model import ARIMA
 import warnings
+import numpy as np
 from numpy import sqrt
 from sklearn.metrics import mean_squared_error
 
