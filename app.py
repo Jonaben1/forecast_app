@@ -12,7 +12,9 @@ warnings.filterwarnings('ignore')
 
 def main():
     st.sidebar.header('App Forecaster')
-    st.sidebar.text('MAKE SURE THE DATA IS TIME SERIES')
+    st.sidebar.info('Time Series prediction.Created and designed by  [Jonaben](https://www.linkedin.com/in/jonathan-ben-okah-7b507725b)
+                   \nMake sure your data is a time series data \
+                    with just two columns including date')
     st.sidebar.text('WITH ONLY TWO COLUMNS INCLUDING DATE')
     option = st.sidebar.selectbox('How do you want to get the data?', ['url', 'file'])
     if option == 'url':
