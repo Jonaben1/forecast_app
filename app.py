@@ -12,9 +12,9 @@ warnings.filterwarnings('ignore')
 
 def main():
     st.sidebar.header('App Forecaster')
+    st.sidebar.info("Created and designed by [Jonaben](https://www.linkedin.com/in/jonathan-ben-okah-7b507725b)")
     st.sidebar.info('Make sure your data is a time series data \
                     with just two columns including date')
-    st.sidebar.text('WITH ONLY TWO COLUMNS INCLUDING DATE')
     option = st.sidebar.selectbox('How do you want to get the data?', ['url', 'file'])
     if option == 'url':
         url = st.sidebar.text_input('Enter a url')
@@ -100,7 +100,7 @@ def model_forecast(data, p, q, d, period):
     model_fit = model.fit()
     output = model_fit.predict(start=len(train), end=len(train)+len(test)-1)
     error = sqrt(mean_squared_error(output, test))
-    st.text(f'MAE using {p,q,d}: {error}')
+    st.text(f'RMSE using {p,q,d}: {error}')
     st.text(f'Forecasting {period} future values')
     model_2 = ARIMA(data.values, order =(p,q,d)).fit()
     forecast = model_2.predict(start=len(data), end=len(data)+period, typ='levels')
